@@ -1,0 +1,120 @@
+name: Publish portfolio Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portfolio/**"
+      - "assets/**"
+      - "docs/**"
+      - "scripts/**"
+      - "package.json"
+      - ".github/workflows/publish-pages.yml"
+  workflow_dispatch:
+    inputs:
+      publish_mode:
+        description: Bootstrap verification or post-verification repeat publishing
+        required: true
+        type: choice
+        options:
+          - bootstrap
+          - repeat
+      bootstrap_pdf:
+        description: Repository path to the fixed bootstrap PDF (required for bootstrap)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.mode.outputs.mode }}
+      bootstrap_pdf: ${{ steps.mode.outputs.bootstrap_pdf }}
+    steps:
+      - id: mode
+        env:
+          REQUESTED_MODE: ${{ inputs.publish_mode }}
+          REQUESTED_BOOTSTRAP_PDF: ${{ inputs.bootstrap_pdf }}
+        run: |
+          echo "mode=${REQUESTED_MODE:-repeat}" >> "$GITHUB_OUTPUT"
+          echo "bootstrap_pdf=$REQUESTED_BOOTSTRAP_PDF" >> "$GITHUB_OUTPUT"
+          {
+            echo "## processing"
+            echo "PDF conversion validation and GitHub Pages publication are in progress. No new share link is available until this run succeeds."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  authorize:
+    needs: [prepare]
+    uses: ./.github/workflows/authorize-publish.yml
+    with:
+      mode: ${{ needs.prepare.outputs.mode }}
+      bootstrap_pdf: ${{ needs.prepare.outputs.bootstrap_pdf }}
+
+  build:
+    needs: [authorize]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install PDF conversion tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
+      - name: Validate manifest immutability and PDF conversion output
+        run: |
+          node scripts/validate-manifest.mjs
+          if git cat-file -e "HEAD^:portfolio/manifest.json" 2>/dev/null; then
+            git show "HEAD^:portfolio/manifest.json" > /tmp/previous-manifest.json
+            node scripts/validate-manifest.mjs --previous /tmp/previous-manifest.json
+          fi
+          node scripts/prepare-published-assets.mjs
+          node scripts/validate-published-assets.mjs
+      - name: Assemble a complete Pages artifact
+        env:
+          CLARITY_PROJECT_ID: ${{ vars.CLARITY_PROJECT_ID }}
+        run: node scripts/build-pages.mjs --output _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Report published share URL
+        run: |
+          {
+            echo "## published"
+            echo "Share the newly published Pages URL: ${{ steps.deployment.outputs.page_url }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  report-failure:
+    needs: [prepare, authorize, build, deploy]
+    if: ${{ always() && (needs.prepare.result == 'failure' || needs.authorize.result == 'failure' || needs.build.result == 'failure' || needs.deploy.result == 'failure') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report failed publication
+        run: |
+          {
+            echo "## failed"
+            echo "This run did not publish a new share link. Existing GitHub Pages content remains published."
+          } >> "$GITHUB_STEP_SUMMARY"

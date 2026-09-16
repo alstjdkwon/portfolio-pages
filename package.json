@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "convert:pdf": "node scripts/convert-pdf.mjs",
+    "validate:manifest": "node scripts/validate-manifest.mjs",
+    "prepare:published-assets": "node scripts/prepare-published-assets.mjs",
+    "validate:published-assets": "node scripts/validate-published-assets.mjs",
+    "build:pages": "node scripts/build-pages.mjs --output _site"
+  }
+}

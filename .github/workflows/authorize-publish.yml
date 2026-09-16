@@ -1,0 +1,29 @@
+name: Authorize portfolio publishing
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        description: Bootstrap verification or post-verification repeat publishing
+        required: true
+        type: string
+      bootstrap_pdf:
+        description: Path to the fixed PDF for bootstrap publishing
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  authorize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify owner and publication phase
+        env:
+          PORTFOLIO_OWNER_LOGIN: ${{ vars.PORTFOLIO_OWNER_LOGIN }}
+          PUBLISH_ACTOR: ${{ github.actor }}
+          PUBLISH_MODE: ${{ inputs.mode }}
+          BOOTSTRAP_PDF: ${{ inputs.bootstrap_pdf }}
+        run: node scripts/authorize-publish.mjs

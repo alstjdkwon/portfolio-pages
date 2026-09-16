@@ -1,0 +1,12 @@
+{
+  "schema": "portfolio-manifest/v1",
+  "bootstrap": {
+    "fixedPdfFingerprint": "222c94711574f02eb8f1938c77cf9bb41fb63e41bfe6f25919c43ade4d9b4cbb",
+    "verificationStatus": "not_started"
+  },
+  "automation": {
+    "repeatingPublishEnabled": false
+  },
+  "versions": [],
+  "routes": []
+}
