@@ -5,7 +5,7 @@ import { assertManifest } from "./validate-manifest.mjs";
 const styles = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: #f4f4f4; }
+  body { margin: 0; background: #D9D9D9; }
   .portfolio-pages { display: flex; flex-direction: column; align-items: center; gap: 24px; }
   .portfolio-page { width: min(100%, 1200px); flex: none; }
   .portfolio-page img { display: block; width: 100%; height: auto; }
