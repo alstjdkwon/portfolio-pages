@@ -33,6 +33,7 @@ test("builds an unauthenticated, ordered vertical viewer with intrinsic page dim
   const html = await readFile(join(outputDirectory, "acme", "index.html"), "utf8");
   const images = [...html.matchAll(/<img\s+([^>]+)>/g)].map((match) => match[1]);
   assert.equal(images.length, 2);
+  assert.match(html, /<html lang="ko">/);
   assert.match(images[0], /src="\.\.\/assets\/versions\/portfolio-v1\/pages\/001\.png"/);
   assert.match(images[0], /width="1920"/);
   assert.match(images[0], /height="1080"/);

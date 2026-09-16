@@ -38,7 +38,7 @@ function pageImage(page, publicRoute) {
 
 function viewerDocument(pages, publicRoute, clarityProjectId) {
   return `<!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
