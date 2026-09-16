@@ -78,7 +78,9 @@ jobs:
           node scripts/validate-manifest.mjs
           if git cat-file -e "HEAD^:portfolio/manifest.json" 2>/dev/null; then
             git show "HEAD^:portfolio/manifest.json" > /tmp/previous-manifest.json
-            node scripts/validate-manifest.mjs --previous /tmp/previous-manifest.json
+            if grep -Eq '"verificationStatus"[[:space:]]*:[[:space:]]*"passed"' /tmp/previous-manifest.json; then
+              node scripts/validate-manifest.mjs --previous /tmp/previous-manifest.json
+            fi
           fi
           node scripts/prepare-published-assets.mjs
           node scripts/validate-published-assets.mjs

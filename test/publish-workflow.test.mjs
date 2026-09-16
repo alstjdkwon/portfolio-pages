@@ -31,6 +31,7 @@ test("publishes Pages only after conversion validation and site assembly", async
   assert.match(yaml.slice(buildJob, deployJob), /node scripts\/validate-manifest\.mjs/);
   assert.match(yaml.slice(buildJob, deployJob), /git cat-file -e "HEAD\^:portfolio\/manifest\.json"/);
   assert.match(yaml.slice(buildJob, deployJob), /--previous \/tmp\/previous-manifest\.json/);
+  assert.match(yaml.slice(buildJob, deployJob), /verificationStatus.*passed/);
   assert.match(yaml.slice(buildJob, deployJob), /poppler-utils/);
   assert.match(yaml.slice(buildJob, deployJob), /node scripts\/prepare-published-assets\.mjs/);
   assert.match(yaml.slice(buildJob, deployJob), /node scripts\/validate-published-assets\.mjs/);

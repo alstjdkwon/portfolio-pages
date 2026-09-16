@@ -27,7 +27,7 @@
 2. `publish_mode`를 `bootstrap`으로 선택하고 `bootstrap_pdf`에 다음 경로를 입력합니다.
 
    ```text
-   docs/팀스파르타_권민성_포트폴리오.pdf
+   docs/portfolio-v1.pdf
    ```
 
 3. 실행 요약의 `published` 항목에 표시되는 Pages URL을 PC 검증용으로 사용합니다. 예상
