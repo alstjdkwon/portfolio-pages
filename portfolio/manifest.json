@@ -7,6 +7,39 @@
   "automation": {
     "repeatingPublishEnabled": false
   },
-  "versions": [],
-  "routes": []
+  "versions": [
+    {
+      "id": "portfolio-v1",
+      "sourcePdfPath": "docs/팀스파르타_권민성_포트폴리오.pdf",
+      "sourceRef": "b5ce3714232ec9712e4ed1ba290f84d60b555e5f",
+      "pages": [
+        { "ordinal": 1, "assetPath": "assets/versions/portfolio-v1/pages/001.png", "width": 1920, "height": 1080 },
+        { "ordinal": 2, "assetPath": "assets/versions/portfolio-v1/pages/002.png", "width": 1920, "height": 1080 },
+        { "ordinal": 3, "assetPath": "assets/versions/portfolio-v1/pages/003.png", "width": 1920, "height": 1080 },
+        { "ordinal": 4, "assetPath": "assets/versions/portfolio-v1/pages/004.png", "width": 1920, "height": 1080 },
+        { "ordinal": 5, "assetPath": "assets/versions/portfolio-v1/pages/005.png", "width": 1920, "height": 1080 },
+        { "ordinal": 6, "assetPath": "assets/versions/portfolio-v1/pages/006.png", "width": 1920, "height": 1080 },
+        { "ordinal": 7, "assetPath": "assets/versions/portfolio-v1/pages/007.png", "width": 1920, "height": 1080 },
+        { "ordinal": 8, "assetPath": "assets/versions/portfolio-v1/pages/008.png", "width": 1920, "height": 1080 },
+        { "ordinal": 9, "assetPath": "assets/versions/portfolio-v1/pages/009.png", "width": 1920, "height": 1080 },
+        { "ordinal": 10, "assetPath": "assets/versions/portfolio-v1/pages/010.png", "width": 1920, "height": 1080 },
+        { "ordinal": 11, "assetPath": "assets/versions/portfolio-v1/pages/011.png", "width": 1920, "height": 1080 },
+        { "ordinal": 12, "assetPath": "assets/versions/portfolio-v1/pages/012.png", "width": 1920, "height": 1080 },
+        { "ordinal": 13, "assetPath": "assets/versions/portfolio-v1/pages/013.png", "width": 1920, "height": 1080 },
+        { "ordinal": 14, "assetPath": "assets/versions/portfolio-v1/pages/014.png", "width": 1920, "height": 1080 },
+        { "ordinal": 15, "assetPath": "assets/versions/portfolio-v1/pages/015.png", "width": 1920, "height": 1080 },
+        { "ordinal": 16, "assetPath": "assets/versions/portfolio-v1/pages/016.png", "width": 1920, "height": 1080 },
+        { "ordinal": 17, "assetPath": "assets/versions/portfolio-v1/pages/017.png", "width": 1920, "height": 1080 },
+        { "ordinal": 18, "assetPath": "assets/versions/portfolio-v1/pages/018.png", "width": 1920, "height": 1080 },
+        { "ordinal": 19, "assetPath": "assets/versions/portfolio-v1/pages/019.png", "width": 1920, "height": 1080 },
+        { "ordinal": 20, "assetPath": "assets/versions/portfolio-v1/pages/020.png", "width": 1920, "height": 1080 },
+        { "ordinal": 21, "assetPath": "assets/versions/portfolio-v1/pages/021.png", "width": 1920, "height": 1080 },
+        { "ordinal": 22, "assetPath": "assets/versions/portfolio-v1/pages/022.png", "width": 1920, "height": 1080 },
+        { "ordinal": 23, "assetPath": "assets/versions/portfolio-v1/pages/023.png", "width": 1920, "height": 1080 }
+      ]
+    }
+  ],
+  "routes": [
+    { "path": "/portfolio-v1", "companyKey": "default", "versionId": "portfolio-v1" }
+  ]
 }
