@@ -17,9 +17,8 @@
    `CLARITY_PROJECT_ID`가 비어 있으면 로컬 빌드는 성공하지만 방문 기록은 수집되지 않습니다.
    실제 공유 전에 반드시 Clarity ID를 설정해야 합니다.
 
-저장소에 첫 커밋을 만든 뒤 `portfolio/manifest.json`의 `portfolio-v1.sourceRef`를 PDF가
-추가된 커밋의 40자리 SHA로 맞춥니다. 이 작업공간은 아직 해당 파일들을 커밋하지 않았기
-때문에 현재 값은 로컬 기준 커밋을 가리킵니다.
+`portfolio/manifest.json`의 `portfolio-v1.sourceRef`는 PDF가 저장소에 추가된 커밋의
+40자리 SHA를 가리켜야 합니다. 현재 초기 PDF와 매니페스트는 저장소에 커밋되어 있습니다.
 
 ## 첫 게시
 
@@ -43,6 +42,8 @@ Actions가 `processing`인 동안에는 새 링크가 없으며, 변환·검증�
 소유자가 `portfolio/manifest.json`의 두 값을 각각 `passed`, `true`로 변경하고 push합니다.
 
 - 23쪽의 순서·비율·글자·이미지가 원본 PDF와 일치합니다.
+- 장표는 원본을 유지하면서 데스크톱에서 최대 1200px로 가운데 표시되고, 장표 사이에 24px
+  간격이 보입니다.
 - Desktop Chrome, 1440×900, 빈 캐시, Lighthouse 데스크톱 모드 3회 중앙값에서 첫 페이지가
   3초 이내에 표시됩니다.
 - 처음부터 끝까지 스크롤해 페이지 겹침이나 위치 튐이 없습니다.
