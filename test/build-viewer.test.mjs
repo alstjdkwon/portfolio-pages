@@ -40,7 +40,8 @@ test("builds an unauthenticated, ordered vertical viewer with intrinsic page dim
   assert.match(images[1], /width="1080"/);
   assert.match(images[1], /height="1920"/);
   assert.match(html, /\.portfolio-page img\s*\{[^}]*height:\s*auto/);
-  assert.match(html, /\.portfolio-pages\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*column/);
+  assert.match(html, /\.portfolio-pages\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*column[^}]*gap:\s*24px/);
+  assert.match(html, /\.portfolio-page\s*\{[^}]*width:\s*min\(100%,\s*1200px\)/);
   assert.doesNotMatch(html, /<form\b|type="password"|type="email"/i);
 });
 

@@ -6,8 +6,8 @@ const styles = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   body { margin: 0; background: #f4f4f4; }
-  .portfolio-pages { display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .portfolio-page { width: min(100%, 1920px); flex: none; }
+  .portfolio-pages { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .portfolio-page { width: min(100%, 1200px); flex: none; }
   .portfolio-page img { display: block; width: 100%; height: auto; }
 `;
 
