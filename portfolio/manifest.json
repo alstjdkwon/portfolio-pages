@@ -1,7 +1,7 @@
 {
   "schema": "portfolio-manifest/v1",
   "bootstrap": {
-    "fixedPdfFingerprint": "222c94711574f02eb8f1938c77cf9bb41fb63e41bfe6f25919c43ade4d9b4cbb",
+    "fixedPdfFingerprint": "a3743ae1858d21d74445fd52b289b32fa11fe3185678ed89d1dcf694bd6d7b65",
     "verificationStatus": "not_started"
   },
   "automation": {
@@ -11,7 +11,7 @@
     {
       "id": "portfolio-v1",
       "sourcePdfPath": "docs/portfolio-v1.pdf",
-      "sourceRef": "c327737482f39c7cdf0cb3391bb9c22ead6e0246",
+      "sourceRef": "0a92a50de3eaa282ae8a0f2591071150e8c743c0",
       "pages": [
         { "ordinal": 1, "assetPath": "assets/versions/portfolio-v1/pages/001.png", "width": 1920, "height": 1080 },
         { "ordinal": 2, "assetPath": "assets/versions/portfolio-v1/pages/002.png", "width": 1920, "height": 1080 },
