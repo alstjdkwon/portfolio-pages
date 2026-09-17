@@ -37,9 +37,40 @@
         { "ordinal": 22, "assetPath": "assets/versions/portfolio-v1/pages/022.png", "width": 1920, "height": 1080 },
         { "ordinal": 23, "assetPath": "assets/versions/portfolio-v1/pages/023.png", "width": 1920, "height": 1080 }
       ]
+    },
+    {
+      "id": "portfolio-v2",
+      "sourcePdfPath": "docs/portfolio-v2.pdf",
+      "sourceRef": "ba9295cacc7f43b35a952fbfd78d4afc4f1aa3c5",
+      "pages": [
+        { "ordinal": 1, "assetPath": "assets/versions/portfolio-v2/pages/001.png", "width": 1920, "height": 1080 },
+        { "ordinal": 2, "assetPath": "assets/versions/portfolio-v2/pages/002.png", "width": 1920, "height": 1080 },
+        { "ordinal": 3, "assetPath": "assets/versions/portfolio-v2/pages/003.png", "width": 1920, "height": 1080 },
+        { "ordinal": 4, "assetPath": "assets/versions/portfolio-v2/pages/004.png", "width": 1920, "height": 1080 },
+        { "ordinal": 5, "assetPath": "assets/versions/portfolio-v2/pages/005.png", "width": 1920, "height": 1080 },
+        { "ordinal": 6, "assetPath": "assets/versions/portfolio-v2/pages/006.png", "width": 1920, "height": 1080 },
+        { "ordinal": 7, "assetPath": "assets/versions/portfolio-v2/pages/007.png", "width": 1920, "height": 1080 },
+        { "ordinal": 8, "assetPath": "assets/versions/portfolio-v2/pages/008.png", "width": 1920, "height": 1080 },
+        { "ordinal": 9, "assetPath": "assets/versions/portfolio-v2/pages/009.png", "width": 1920, "height": 1080 },
+        { "ordinal": 10, "assetPath": "assets/versions/portfolio-v2/pages/010.png", "width": 1920, "height": 1080 },
+        { "ordinal": 11, "assetPath": "assets/versions/portfolio-v2/pages/011.png", "width": 1920, "height": 1080 },
+        { "ordinal": 12, "assetPath": "assets/versions/portfolio-v2/pages/012.png", "width": 1920, "height": 1080 },
+        { "ordinal": 13, "assetPath": "assets/versions/portfolio-v2/pages/013.png", "width": 1920, "height": 1080 },
+        { "ordinal": 14, "assetPath": "assets/versions/portfolio-v2/pages/014.png", "width": 1920, "height": 1080 },
+        { "ordinal": 15, "assetPath": "assets/versions/portfolio-v2/pages/015.png", "width": 1920, "height": 1080 },
+        { "ordinal": 16, "assetPath": "assets/versions/portfolio-v2/pages/016.png", "width": 1920, "height": 1080 },
+        { "ordinal": 17, "assetPath": "assets/versions/portfolio-v2/pages/017.png", "width": 1920, "height": 1080 },
+        { "ordinal": 18, "assetPath": "assets/versions/portfolio-v2/pages/018.png", "width": 1920, "height": 1080 },
+        { "ordinal": 19, "assetPath": "assets/versions/portfolio-v2/pages/019.png", "width": 1920, "height": 1080 },
+        { "ordinal": 20, "assetPath": "assets/versions/portfolio-v2/pages/020.png", "width": 1920, "height": 1080 },
+        { "ordinal": 21, "assetPath": "assets/versions/portfolio-v2/pages/021.png", "width": 1920, "height": 1080 },
+        { "ordinal": 22, "assetPath": "assets/versions/portfolio-v2/pages/022.png", "width": 1920, "height": 1080 },
+        { "ordinal": 23, "assetPath": "assets/versions/portfolio-v2/pages/023.png", "width": 1920, "height": 1080 }
+      ]
     }
   ],
   "routes": [
-    { "path": "/portfolio-v1", "companyKey": "default", "versionId": "portfolio-v1" }
+    { "path": "/portfolio-v1", "companyKey": "default", "versionId": "portfolio-v1" },
+    { "path": "/portfolio-v2", "companyKey": "default-v2", "versionId": "portfolio-v2" }
   ]
 }
